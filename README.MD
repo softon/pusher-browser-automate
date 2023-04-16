@@ -28,11 +28,11 @@ npm -v
 ```bash
 sudo git clone https://github.com/softon/pusher-browser-automate.git
 cd pusher-browser-automate
-npm install
+sudo npm install
 ```
 4. Copy the config file and edit with required data from pusher.com ``` cp .env.example .env ```
 5. Run the server
 ```bash
-npm start
+sudo npm start
 ```
 6. If you want to auto start the service then use PM2
