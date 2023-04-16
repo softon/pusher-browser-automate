@@ -2,6 +2,7 @@ require('dotenv').config();
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var hostname = '0.0.0.0';
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 const Pusher = require("pusher");
@@ -50,8 +51,9 @@ app.post('/start-clients', function(req, res) {
     })
 });
 
-app.listen(process.env.PORT);
-console.log(`Server is listening: http://localhost:${process.env.PORT}`);
+app.listen(process.env.PORT, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
 
 
 
